@@ -1,81 +1,61 @@
-# VHDL Entity Converter
+# VHDL Entity Converter README
 
-[![Travis.ci Shield](https://img.shields.io/travis/sneakypete81/atom-vhdl-entity-converter/master.svg?label=travis%20ci)](https://travis-ci.org/sneakypete81/atom-vhdl-entity-converter)
-[![AppVeyor Shield](https://img.shields.io/appveyor/ci/sneakypete81/atom-vhdl-entity-converter/master.svg?label=appveyor )](https://ci.appveyor.com/project/sneakypete81/atom-vhdl-entity-converter)
+Fork and expansion of the [Atom VHDL Entity Converter](https://github.com/sneakypete81/atom-vhdl-entity-converter) for VSCode. 
 
-Converts a VHDL entity definition into a component, instance or signal definitions, using the clipboard.
+## Features
 
-Inspired by [Sublime Text VHDL Utils](https://github.com/korvus81/sublimetext-vhdl-utils). Requires the [VHDL Language](https://atom.io/packages/language-vhdl) package (this will be installed automatically).
+Copy entity as component to clipboard
 
-![Screencast showing the package in action](https://github.com/sneakypete81/atom-vhdl-entity-converter/raw/master/demo.gif)
+![Copy_as_component](file://./images/Copy_as_component.gif)
 
-## Examples
-Starting with the following VHDL entity:
-```
-entity add is
-generic (
-  WIDTH  : integer := 8;
-  HEIGHT : integer := 8
-);
-port (
-  clk    : in  std_logic;
-  rst    : in  std_logic;
-  in1    : in  std_logic_vector(WIDTH-1 downto 0);
-  in2    : in  std_logic_vector(WIDTH-1 downto 0);
-  output : out std_logic_vector(WIDTH-1 downto 0);
-  start  : in  std_logic;
-  done   : out std_logic
-);
-end add;
-```
+## Requirements
 
-### Copy as Component:
-`[Ctrl] [Shift] [C] - [Ctrl] [Shift] [C]` copies the following to the clipboard:
-```
-component add
-generic (
-  WIDTH  : integer := 8;
-  HEIGHT : integer := 8
-);
-port (
-  clk    : in  std_logic;
-  rst    : in  std_logic;
-  in1    : in  std_logic_vector(WIDTH-1 downto 0);
-  in2    : in  std_logic_vector(WIDTH-1 downto 0);
-  output : out std_logic_vector(WIDTH-1 downto 0);
-  start  : in  std_logic;
-  done   : out std_logic
-);
-end component add;
-```
+None.
 
-### Copy as Instance:
-`[Ctrl] [Shift] [C] - [Ctrl] [Shift] [I]` copies the following to the clipboard:
-```
-add_i : add
-generic map (
-  WIDTH  => WIDTH,
-  HEIGHT => HEIGHT
-)
-port map (
-  clk    => clk,
-  rst    => rst,
-  in1    => in1,
-  in2    => in2,
-  output => output,
-  start  => start,
-  done   => done
-);
-```
+## Extension Settings
 
-### Copy as Signals
-`[Ctrl] [Shift] [C] - [Ctrl] [Shift] [S]` copies the following to the clipboard:
-```
-signal clk    : std_logic;
-signal rst    : std_logic;
-signal in1    : std_logic_vector(WIDTH-1 downto 0);
-signal in2    : std_logic_vector(WIDTH-1 downto 0);
-signal output : std_logic_vector(WIDTH-1 downto 0);
-signal start  : std_logic;
-signal done   : std_logic;
-```
+Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+
+For example:
+
+This extension contributes the following settings:
+
+* `myExtension.enable`: Enable/disable this extension.
+* `myExtension.thing`: Set to `blah` to do something.
+
+## Known Issues
+
+Calling out known issues can help limit users opening duplicate issues against your extension.
+
+## Release Notes
+
+Users appreciate release notes as you update your extension.
+
+### 1.0.0
+
+Initial release of ...
+
+### 1.0.1
+
+Fixed issue #.
+
+### 1.1.0
+
+Added features X, Y, and Z.
+
+---
+
+## Working with Markdown
+
+You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+
+* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
+* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
+* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
+
+## For more information
+
+* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+
+**Enjoy!**

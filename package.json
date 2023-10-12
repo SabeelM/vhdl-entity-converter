@@ -1,28 +1,143 @@
 {
   "name": "vhdl-entity-converter",
-  "main": "./lib/vhdl-entity-converter",
-  "version": "0.9.0",
-  "description": "Convert a VHDL entity into a component, instance or signal definitions, using the clipboard.",
-  "keywords": [
-    "vhdl"
-  ],
-  "activationCommands": {
-    "atom-workspace": [
-      "vhdl-entity-converter:copy-as-component",
-      "vhdl-entity-converter:copy-as-instance",
-      "vhdl-entity-converter:copy-as-signals"
-    ]
-  },
-  "repository": "https://github.com/sneakypete81/atom-vhdl-entity-converter",
-  "license": "GPL-3.0",
+  "displayName": "VHDL Entity Converter",
+  "description": "VHDL entity converter",
+  "icon": "images/icon2.png",
+  "version": "0.0.1",
+  "publisher": "SabeelMehmood",
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "vscode": "^1.82.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.copy_comp_cmd",
+    "onCommand:extension.copy_inst_cmd",
+    "onCommand:extension.copy_sig_cmd"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vhdl-entity-converter.copy-as-component",
+        "title": "Copy as component"
+      },
+      {
+        "command": "vhdl-entity-converter.copy-as-instance",
+        "title": "Copy as instance"
+      },
+      {
+        "command": "vhdl-entity-converter.copy-ports-as-signals",
+        "title": "Copy ports as signals"
+      },
+      {
+        "command": "vhdl-entity-converter.copy-generics-as-constants",
+        "title": "Copy generics as constants"
+      }
+    ],
+    "submenus" : [
+      {
+        "id" : "vhdl-entity-converter.submenu",
+        "label" : "VHDL Entity Converter"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "vhdl-entity-converter",
+        "properties": {
+             "vhdl-entity-converter.signalPrefix": 
+               {
+                 "title": "Signal Prefix",
+                 "type": "string",
+                 "default": "",
+                 "description": "Add a prefix to all signal definitions.",
+                 "order" : 1                 
+               },
+               "vhdl-entity-converter.constPrefix": 
+               {
+                 "title": "Constant Prefix",
+                 "type": "string",
+                 "default": "",
+                 "description": "Add a prefix to all constant definitions.",
+                 "order" : 2                 
+               },
+               "vhdl-entity-converter.instancePrefix": 
+               {
+                 "title": "Instance Prefix",
+                 "type": "string",
+                 "default": "i_",
+                 "description": "Add a prefix to label of entity instantiation.",
+                 "order" : 2                 
+               },             
+             "vhdl-entity-converter.indentType": 
+             {
+                "title": "Indentation",
+                "type": "string",
+                "default": "Spaces",
+                "enum": ["Spaces", "Tabs"],                
+                "description": "Indent using",
+                "order" : 4                  
+              },             
+             "vhdl-entity-converter.indentSpaceCount":              
+             {
+                "title": "Indentation Space Count",
+                "type": "integer",
+                "default": 4,
+                "minimum": 0,                             
+                "description": "Only when using spaces for indentation",
+                "order" : 3                  
+              },
+              "vhdl-entity-converter.keywordCasing": 
+              {
+                 "title": "Keyword casing",
+                 "type": "string",
+                 "default": "lowercase",
+                 "enum": ["lowercase", "uppercase"],                
+                 "description": "Casing used for keywords (does not alter casing of names of signals / generics)",
+                 "order" : 4                  
+               }                   
+        }    
+      }
+    ],
+    "menus": {
+        "editor/context": [
+          {
+            "submenu": "vhdl-entity-converter.submenu",
+            "group": "vhdl-entity-converter_grp"
+          }                  
+        ],
+        "vhdl-entity-converter.submenu": [
+            {
+              "command": "vhdl-entity-converter.copy-as-component"
+            },
+            {
+              "command": "vhdl-entity-converter.copy-as-instance"  
+            },
+            {
+              "command": "vhdl-entity-converter.copy-ports-as-signals"
+            },
+            {
+              "command": "vhdl-entity-converter.copy-generics-as-constants"
+            }          
+        ]     
+      }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.82.0",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "atom-package-deps": ">=4.0.0"
-  },
-  "package-deps": [
-    "language-vhdl"
-  ],
-  "devDependencies": {}
+  }
 }
