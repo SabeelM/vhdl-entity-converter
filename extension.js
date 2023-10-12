@@ -16,9 +16,6 @@ var vscode = require("vscode");
 var parser = require("./lib/parser");
 var template = require("./lib/templates");
 
-// TODO: consider error report in else clauses of the various entity founds logic
-// test configurations, entity types
-// Cleanup code: remove comments, remove transcript reports, add meaningful comments where necessary to explain code
 function parse_entity() {
     
     var copied_msg;
