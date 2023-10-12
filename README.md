@@ -5,57 +5,34 @@ Fork and expansion of the [Atom VHDL Entity Converter](https://github.com/sneaky
 ## Features
 
 Copy entity as component to clipboard
+![Copy_as_component](https://raw.githubusercontent.com/SabeelM/vhdl-entity-converter/master/images/Copy_as_component.gif)
 
-![Copy_as_component](file://./images/Copy_as_component.gif)
+Copy entity as instantiation to clipboard
+![Copy_as_instance](https://raw.githubusercontent.com/SabeelM/vhdl-entity-converter/master/images/Copy_as_instance.gif)
 
-## Requirements
+Copy entity ports as signal declarations to clipboard
+![Copy_as_signals](https://raw.githubusercontent.com/SabeelM/vhdl-entity-converter/master/images/Copy_as_signals.gif)
 
-None.
+Copy entity generics as constant declarations to clipboard
+![Copy_as_constants](https://raw.githubusercontent.com/SabeelM/vhdl-entity-converter/master/images/Copy_as_constants.gif)
 
 ## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `vhdl-entity-converter.signalPrefix`: Prefix to all signals for signal declarations when performing copy ports as signals.
+* `vhdl-entity-converter.constPrefix`: Prefix to all constants for constant declarations when performing copy generics as constants.
+* `vhdl-entity-converter.instancePrefix`: Prefix to entity instantiations.
+* `vhdl-entity-converter.indentType`: Indent either spaces or tab.
+* `vhdl-entity-converter.indentSpaceCount`: How many spaces for each indentation level when the above is selected.
+* `vhdl-entity-converter.keywordCasing`: Select upper/lower case for VHDL Keywords (note: casing of types that are copied will remain in their casing).
 
 ## Known Issues
+None.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## Requirements
+None.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release.
