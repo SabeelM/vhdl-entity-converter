@@ -123,7 +123,7 @@ function copy_as_component() {
         vscode.window.showInformationMessage(`Copied component of ${entity.name}`);
     }
 }
-// TODO: figure out searching for end of entity in the instance where it is commented out, e.g. "-- entity;" will be picked up to mean end of entity.
+
 function activate(context) {
 
     let copy_comp_cmd = vscode.commands.registerCommand('vhdl-entity-converter.copy-as-component', function () {
