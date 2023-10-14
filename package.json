@@ -5,6 +5,7 @@
   "icon": "images/icon2.png",
   "version": "0.0.1",
   "publisher": "SabeelM",
+  "repository": "https://github.com/SabeelM/vhdl-entity-converter",
   "engines": {
     "vscode": "^1.82.0"
   },
