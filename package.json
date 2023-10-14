@@ -4,7 +4,7 @@
   "description": "VHDL entity converter",
   "icon": "images/icon2.png",
   "version": "0.0.1",
-  "publisher": "SabeelMehmood",
+  "publisher": "SabeelM",
   "engines": {
     "vscode": "^1.82.0"
   },
